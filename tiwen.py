@@ -32,7 +32,7 @@ def login():
         'User-Agent': 'okhttp/3.10.0'
     }
     data = {
-        'phone':PHONW,
+        'phone':PHONE,
         'password':encoded_pwd,
         'mobileSystem':'11',
         'appVersion':'1.6.5',
