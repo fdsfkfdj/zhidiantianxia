@@ -11,11 +11,11 @@ import yagmail
 import os
 
 session = requests.Session()
-PHONE = os.environ ['PHONE']
-PWD =  os.environ ['PWD']
-MAIL1 = os.environ ['MAIL1']
-M1PW = os.environ ['M1PW']
-MAIL2 = os.environ ['MAIL2']
+PHONE = os.environ["PHONE"]
+PWD =  os.environ["PWD"]
+MAIL1 = os.environ["MAIL1"]
+M1PW = os.environ["M1PW"]
+MAIL2 = os.environ["MAIL2"]
 flag = False
 
 #指点天下登录模块
@@ -46,7 +46,7 @@ def login():
         print('登录成功！')
         flag = True
     else:
-        print('登录失败！',response.json()['msg'])
+        print('登录失败！',response.json()['msg'],PWD)
     return response.json()['data']
 
 #健康签到模块
@@ -87,3 +87,4 @@ token = login()
 sleep(5)
 if flag:
     sign_in(token)
+    
