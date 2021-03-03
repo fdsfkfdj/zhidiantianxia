@@ -110,7 +110,7 @@ def sign_in_evening(token):
         
     else:
         print("签到失败！")
-        yag.send(to = [MAIL12], subject = '指点天下日常签到结果', contents = ['亲爱的臭臭酱，本次签到失败啦！原因是：{}。详情请打开指点天下APP查看哦！'.format(response.json()['msg'])])
+        yag.send(to = [MAIL2], subject = '指点天下日常签到结果', contents = ['亲爱的臭臭酱，本次签到失败啦！原因是：{}。详情请打开指点天下APP查看哦！'.format(response.json()['msg'])])
         
 
 token = login()
