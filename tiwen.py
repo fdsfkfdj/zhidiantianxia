@@ -12,7 +12,7 @@ import os
 
 session = requests.Session()
 PHONE = os.environ ['PHONE']
-PWD = os.environ ['PWD']
+PWD = 'sjh987826zdtx' #os.environ ['PWD']
 NAIL1 = os.environ ['MAIL1']
 M1PW = os.environ ['M1PW']
 MAIL2 = os.environ ['MAIL2']
