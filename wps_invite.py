@@ -35,13 +35,12 @@ sio.write("-" + nowtime + "-\n\n")
 
 # APP
 def pushMail(desp, nowtime):
-    #ssckey = SCKEY
-    #send_url = 'https://sctapi.ftqq.com/' + ssckey + '.send'
+    b = a
     yag = yagmail.SMTP(user = MAIL1, password = M1PW, host = 'smtp.qq.com')
     if '失败' in desp:
         yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请失败啦！原因是：\n{}。详情请打开WPS微信小程序查看哦！'.format(desp)])
     else:
-        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请成功啦！本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(a)]) #本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(PCOUNT)
+        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请成功啦！本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(b)]) #本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(PCOUNT)
         
 
 
