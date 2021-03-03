@@ -11,17 +11,17 @@ import yagmail
 import os
 
 session = requests.Session()
-phone = os.environ ['PHONE']
-pwd = os.environ ['PWD']
-mail1 = os.environ ['MAIL1']
-m1pw = os.environ ['M1PW']
-mail2 = os.environ ['MAIL2']
+PHONE = os.environ ['PHONE']
+PWD = os.environ ['PWD']
+NAIL1 = os.environ ['MAIL1']
+M1PW = os.environ ['M1PW']
+MAIL2 = os.environ ['MAIL2']
 flag = False
 
 #指点天下登录模块
 def login():
     url = 'http://app.zhidiantianxia.cn/api/Login/pwd'
-    encoded_pwd = md5('axy_{}'.format(pwd).encode()).hexdigest()
+    encoded_pwd = md5('axy_{}'.format(PWD).encode()).hexdigest()
     global flag
     header = {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -32,7 +32,7 @@ def login():
         'User-Agent': 'okhttp/3.10.0'
     }
     data = {
-        'phone':phone,
+        'phone':PHONW,
         'password':encoded_pwd,
         'mobileSystem':'11',
         'appVersion':'1.6.5',
@@ -53,7 +53,7 @@ def login():
 def sign_in(token):
     url = 'http://zua.zhidiantianxia.cn/api/study/health/apply'
     header = {
-        'axy-phone': phone,
+        'axy-phone': PHONE,
         'axy-token': token,
         'Content-Type': 'application/json',
         'user-agent': 'M2011K2C(Android/11) (com.axy.zhidian/1.6.3) Weex/0.18.0 1080x1920',
@@ -71,15 +71,15 @@ def sign_in(token):
     response = session.post(url=url,headers=header,data=data)
     
     # 登录你的邮箱
-    yag = yagmail.SMTP(user = 'ynight-message@foxmail.com', password = 'fazzgaiwshsvccdi', host = 'smtp.qq.com')
+    yag = yagmail.SMTP(user = MAIL1, password = M1PW, host = 'smtp.qq.com')
 
     if response.json()['status'] == 1:
         print("健康打卡成功！")
-        yag.send(to = ['1655162724@qq.com'], subject = '指点天下健康签到结果', contents = ['亲爱的臭臭酱，今天的健康签到已经完成啦！今天也会是健健康康的一天哦！！！'])
+        yag.send(to = [MAIL2], subject = '指点天下健康签到结果', contents = ['亲爱的臭臭酱，今天的健康签到已经完成啦！今天也会是健健康康的一天哦！！！'])
     else:
         print("健康打卡失败！",response.json()['msg'])
         result = response.json()['msg']
-        yag.send(to = ['1655162724@qq.com'], subject = '指点天下健康签到结果', contents = ['亲爱的臭臭酱，今天的健康签到失败了哦。原因是：{}。具体原因请打开指点天下APP查看。'.format(result)])
+        yag.send(to = [MAIL2], subject = '指点天下健康签到结果', contents = ['亲爱的臭臭酱，今天的健康签到失败了哦。原因是：{}。具体原因请打开指点天下APP查看。'.format(result)])
 
 
 
