@@ -12,7 +12,7 @@ import os
 
 session = requests.Session()
 PHONE = os.environ["PHONE"]
-PWD =  os.environ["PWD"]
+ZDTXPWD =  os.environ["ZDTXPWD"]
 MAIL1 = os.environ["MAIL1"]
 M1PW = os.environ["M1PW"]
 MAIL2 = os.environ["MAIL2"]
@@ -20,8 +20,9 @@ flag = False
 
 #指点天下登录模块
 def login():
+    print(ZDTXPWD)
     url = 'http://app.zhidiantianxia.cn/api/Login/pwd'
-    encoded_pwd = md5('axy_{}'.format(PWD).encode()).hexdigest()
+    encoded_pwd = md5('axy_{}'.format(ZDTXPWD).encode()).hexdigest()
     global flag
     header = {
         'Content-Type': 'application/x-www-form-urlencoded',
