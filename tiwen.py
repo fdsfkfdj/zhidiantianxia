@@ -12,8 +12,8 @@ import os
 
 session = requests.Session()
 PHONE = os.environ ['PHONE']
-PWD = 'sjh987826zdtx' #os.environ ['PWD']
-NAIL1 = os.environ ['MAIL1']
+PWD =  os.environ ['PWD']
+MAIL1 = os.environ ['MAIL1']
 M1PW = os.environ ['M1PW']
 MAIL2 = os.environ ['MAIL2']
 flag = False
@@ -70,15 +70,15 @@ def sign_in(token):
     data = json.dumps(data)
     response = session.post(url=url,headers=header,data=data)
     
-    # 登录你的邮箱
-    yag = yagmail.SMTP(user = MAIL1, password = M1PW, host = 'smtp.qq.com')
 
     if response.json()['status'] == 1:
         print("健康打卡成功！")
+        yag = yagmail.SMTP(user = MAIL1, password = M1PW, host = 'smtp.qq.com')
         yag.send(to = [MAIL2], subject = '指点天下健康签到结果', contents = ['亲爱的臭臭酱，今天的健康签到已经完成啦！今天也会是健健康康的一天哦！！！'])
     else:
         print("健康打卡失败！",response.json()['msg'])
         result = response.json()['msg']
+        yag = yagmail.SMTP(user = MAIL1, password = M1PW, host = 'smtp.qq.com')
         yag.send(to = [MAIL2], subject = '指点天下健康签到结果', contents = ['亲爱的臭臭酱，今天的健康签到失败了哦。原因是：{}。具体原因请打开指点天下APP查看。'.format(result)])
 
 
