@@ -38,7 +38,7 @@ jobs:
     - name: ZHIDIANTIANXIA
       env:
         PHONE: ${{ secrets.PHONE }}
-        #PWD: ${{ secrets.PWD }}
+        PWD: ${{ secrets.PWD }}
         MAIL1: ${{ secrets.MAIL1 }}
         M1PW: ${{ secrets.M1PW }}
         MAIL2: ${{ secrets.MAIL2 }}
