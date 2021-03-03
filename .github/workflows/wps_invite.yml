@@ -36,7 +36,7 @@ jobs:
         sudo apt-get install python3-bs4
         pip3 install -r requirements.txt
         
-    - name: ZHIDIANTIANXIA
+    - name: WPS
       env:
         PHONE: ${{ secrets.PHONE }}
         ZDTXPWD: ${{ secrets.ZDTXPWD }}
@@ -46,6 +46,6 @@ jobs:
         WPS_ID: ${{ secrets.WPS_ID }}
         WPS_SID: ${{ secrets.WPS_SID }}
       run: |
-        python3 qiandao.py <<EOF
+        python3 wps_invite.py <<EOF
         
         EOF
