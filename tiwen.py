@@ -46,7 +46,7 @@ def login():
         print('登录成功！')
         flag = True
     else:
-        print('登录失败！',response.json()['msg'],PWD)
+        print('登录失败！',response.json()['msg'],PHONE,PWD,MAIL1,M1PW,MAIL2)
     return response.json()['data']
 
 #健康签到模块
