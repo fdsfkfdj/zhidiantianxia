@@ -78,7 +78,7 @@ def main():
 
 # wps接受邀请
 def wps_invite(sid: list, invite_userid: int) -> None:
-    
+    global a
     invite_url = 'http://zt.wps.cn/2018/clock_in/api/invite'
     for index, i in enumerate(sid):
         headers = {
