@@ -11,11 +11,11 @@ import yagmail
 import os
 
 session = requests.Session()
-phone = os.environ ['PHONE']     #'18697781978'  改成你的手机号
-pwd = os.environ ['PWD']       #'sjh987826zdtx'  #改为你的密码
-mail1 = os.environ ['MAIL1']     #'ynight-message@foxmail.com'
-m1pw = os.environ ['M1PW']      #'fazzgaiwshsvccdi'
-mail2 = os.environ ['MAIL2']     #'1655162724@qq.com'
+phone = os.environ ['PHONE']
+pwd = os.environ ['PWD']
+mail1 = os.environ ['MAIL1']
+m1pw = os.environ ['M1PW']
+mail2 = os.environ ['MAIL2']
 flag = False
 
 #指点天下登录模块
