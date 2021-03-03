@@ -12,7 +12,7 @@ on:
         branches:
             - master
     schedule:
-        - cron: '10 2 * * *'
+        - cron: '20 2 * * *'
     watch:
         types: 
             - started
@@ -38,8 +38,7 @@ jobs:
         
     - name: WPS
       env:
-        PHONE: ${{ secrets.PHONE }}
-        ZDTXPWD: ${{ secrets.ZDTXPWD }}
+        
         MAIL1: ${{ secrets.MAIL1 }}
         M1PW: ${{ secrets.M1PW }}
         MAIL2: ${{ secrets.MAIL2 }}
