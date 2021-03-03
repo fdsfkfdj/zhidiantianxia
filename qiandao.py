@@ -9,6 +9,7 @@ from time import sleep
 import random
 import time
 import yagmail
+import os
 
 
 session = requests.Session()
