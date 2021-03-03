@@ -13,7 +13,7 @@ M1PW = os.getenv('M1PW')
 MAIL2 =  os.getenv('MAIL2')
 WPS_ID = os.getenv('WPS_ID')
 WPS_SID = os.getenv('WPS_SID')
-PCOUNT = 0
+a = 0
 
 #SCKEY = 'SCT13711Ta6e2FTvd5UHDgH6QuDWl7iHP'  # '*********复制SERVER酱的SCKEY进来*************(保留引号)'
 data = {
@@ -41,7 +41,7 @@ def pushMail(desp, nowtime):
     if '失败' in desp:
         yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请失败啦！原因是：\n{}。详情请打开WPS微信小程序查看哦！'.format(desp)])
     else:
-        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请成功啦！本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(PCOUNT)]) #本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(PCOUNT)
+        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请成功啦！本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(a)]) #本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(PCOUNT)
         
 
 
@@ -87,7 +87,7 @@ def wps_invite(sid: list, invite_userid: int) -> None:
         time.sleep(10)
         r = s.post(invite_url, headers=headers, data={
             'invite_userid': invite_userid})
-        PCOUNT = PCOUNT + 1
+        a = a + 1
 
 def main_handler(event, context):
     return main()
