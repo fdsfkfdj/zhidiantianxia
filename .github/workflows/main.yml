@@ -39,7 +39,6 @@ jobs:
       env:
         PHONE: ${{ secrets.PHONE }}
         ZDTXPWD: ${{ secrets.ZDTXPWD }}
-        PWD: ${{ secrets.PWD }}
         MAIL1: ${{ secrets.MAIL1 }}
         M1PW: ${{ secrets.M1PW }}
         MAIL2: ${{ secrets.MAIL2 }}
