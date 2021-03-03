@@ -87,7 +87,7 @@ def wps_invite(sid: list, invite_userid: int) -> None:
         time.sleep(10)
         r = s.post(invite_url, headers=headers, data={
             'invite_userid': invite_userid})
-        PCOUNT += 1
+        PCOUNT = PCOUNT + 1
 
 def main_handler(event, context):
     return main()
