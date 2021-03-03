@@ -44,7 +44,7 @@ jobs:
         M1PW: ${{ secrets.M1PW }}
         MAIL2: ${{ secrets.MAIL2 }}
         WPS_ID: ${{ secrets.WPS_ID }}
-        WPS_SID:${{ secrets.WPS_SID }}
+        WPS_SID: ${{ secrets.WPS_SID }}
       run: |
         python3 qiandao.py <<EOF
         
