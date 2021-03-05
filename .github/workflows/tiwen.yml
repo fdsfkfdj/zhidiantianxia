@@ -5,16 +5,12 @@ name: tiwen
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
-
-  workflow_dispatch:
+    workflow_dispatch:
     push:
         branches:
             - master
     schedule:
         - cron: '10 23,6 * * *'
-    watch:
-        types: 
-            - started
   
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
