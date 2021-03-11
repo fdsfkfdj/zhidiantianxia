@@ -10,7 +10,7 @@ on:
         branches:
             - master
     schedule:
-        - cron: '10 14 * * *'
+        - cron: '1 14 * * *'
   
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
