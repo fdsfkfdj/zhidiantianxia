@@ -65,8 +65,8 @@ def sign_in(token):
     }
     data = {
         "health":0,
-        "student":"1",
-        "content": "{\"location\":{\"address\":\"福建省厦门市海沧区G76厦蓉高速1394号靠近厦门欣昱机电有限公司\",\"code\":\"1\",\"lng\":117.993856,\"lat\":24.469346},\"name\":\"方祖全\",\"phone\":\"18697781978\",\"credentialType\":\"身份证\",\"credentialCode\":\"411503199810144239\",\"college\":\"航空工程学院\",\"major\":\"机械设计制造及其自动化S\",\"className\":\"19069601班\",\"code\":\"1906960136\",\"nowLocation\":\"福建省-厦门市-海沧区\",\"temperature\":\"36.6\",\"observation\":\"否\",\"confirmed\":\"否\",\"goToHuiBei\":\"否\",\"contactIllPerson\":\"否\",\"isFamilyStatus\":\"否\",\"health\":0}"
+        "student":1,
+        "templateId":"1","content":"{\"location\":{\"address\":\"河南省郑州市二七区大学南路7-6号靠近万达广场\",\"code\":\"1\",\"lng\":113.644864,\"lat\":34.717667},\"nowLocation\":\"河南省-郑州市-二七区\",\"temperature\":\"36.6\",\"health\":\"是\",\"observation\":\"否\",\"confirmed\":\"否\",\"goToHuiBei\":\"否\",\"contactIllPerson\":\"否\",\"isFamilyStatus\":\"否\",\"help\":\"\"}"
         }
     data = json.dumps(data)
     response = session.post(url=url,headers=header,data=data)
