@@ -20,7 +20,7 @@ data = {
     "wps_invite": [
         {
             "name": "大神",
-            "invite_userid": 248098774,  # "*********复制手机WPS个人信息中的用户ID进来，类似括号内容(123456789)*************(不保留双引号)",
+            "invite_userid": 1105733923,  # "*********复制手机WPS个人信息中的用户ID进来，类似括号内容(123456789)*************(不保留双引号)",
             "sid": WPS_SID  # network获取wps_sid
         }
     ]
@@ -38,9 +38,9 @@ def pushMail(desp, nowtime):
     
     yag = yagmail.SMTP(user = MAIL1, password = M1PW, host = 'smtp.qq.com')
     if '失败' in desp:
-        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请失败啦！原因是：\n{}。详情请打开WPS微信小程序查看哦！'.format(desp)])
-    else:
-        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['亲爱的臭臭酱，本次邀请成功啦！本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(a)]) #本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(PCOUNT)
+        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['本次邀请失败啦！原因是：\n{}。详情请打开WPS微信小程序查看哦！'.format(desp)])
+    else:亲爱的臭臭酱
+        yag.send(to = [MAIL2], subject = 'WPS小程序邀请结果：', contents = ['本次邀请成功啦！本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(a)]) #本次共邀请了{}人。详情请打开WPS微信小程序查看哦！'.format(PCOUNT)
         
 
 
