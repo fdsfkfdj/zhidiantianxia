@@ -19,7 +19,7 @@ a = 0
 data = {
     "wps_invite": [
         {
-            "name": "臭臭酱",
+            "name": "大神",
             "invite_userid": 248098774,  # "*********复制手机WPS个人信息中的用户ID进来，类似括号内容(123456789)*************(不保留双引号)",
             "sid": WPS_SID  # network获取wps_sid
         }
